@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './app-theme';
+@use 'sass:map';
+
+/*$_primary: mat.define-palette(mat.$indigo-palette);
+$_accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$_theme: mat.define-light-theme($_primary, $_accent);*/
+
+// Include material core styles.
+/*
+@include mat.core();
+
+@include mat.all-component-themes($_theme);
+@include app-theme.theme($_theme);
+*/
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background: #FC5C7D; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.bg {
+  animation: slide 7s ease-in-out infinite alternate;
+  // this is cute too
+  // background: radial-gradient(#e66465, #9198e5);
+  background: linear-gradient(225deg, #c51b02, #a07a9d, #973dff80);
+  bottom: 0;
+  height: 100vh;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+
+  /*  animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, white 50%, red 50%);
+    bottom:0;
+    left:-50%;
+    opacity: 0.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+
+    */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.bg1 {
+  animation: slide 19s ease-in-out infinite alternate;
+  background-image: linear-gradient(48deg, #ff6d6d 50%, #9c1616 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+section {
+  margin: 50px;
+}
+
+.profile {
+
+}
+
+mat-card, mat-toolbar {
+  //margin: 50px;
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 40%) !important;
+  backdrop-filter: blur(4px) !important;
+  border-radius: 10px !important;
+}
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  )
+));
+
+@include mat.all-component-themes($my-theme);
+
+body {
+  // background: #69f0ae;
+  //background: linear-gradient(to right top, mat.get-color-from-palette(mat.$orange-palette, darker-contrast), mat.get-color-from-palette($my-accent, darker-contrast), mat.get-color-from-palette($my-warn, darker-contrast));
+}
