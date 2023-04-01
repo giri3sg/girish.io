@@ -15,12 +15,16 @@ import {ThemeStorage} from "../services/ThemePicker.service";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import { GlassMorphismComponent } from './glass-morphism/glass-morphism.component';
+import { HomeComponent } from './home/home.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ThemePicker,
-    GlassMorphismComponent
+    GlassMorphismComponent,
+    HomeComponent,
+    TestComponent
   ],
     imports: [
         BrowserModule,
