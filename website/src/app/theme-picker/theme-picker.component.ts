@@ -8,23 +8,26 @@ import {
 } from '@angular/core';
 import {StyleManager} from '../../services/StyleManager.service';
 import {DocsSiteTheme, ThemeStorage} from '../../services/ThemePicker.service';
-import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
 import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
-import {MatLegacyMenuModule as MatMenuModule} from '@angular/material/legacy-menu';
-import {MatLegacyTooltipModule as MatTooltipModule} from '@angular/material/legacy-tooltip';
+import {MatLegacyMenuModule} from '@angular/material/legacy-menu'
+import {MatLegacyTooltipModule, MatLegacyTooltipModule as MatTooltipModule} from '@angular/material/legacy-tooltip';
 import {CommonModule} from '@angular/common';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {DomSanitizer} from '@angular/platform-browser';
+import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'theme-picker',
+  standalone: true,
+  imports: [MatIconModule, MatLegacyMenuModule, CommonModule, MatButtonModule, MatLegacyTooltipModule],
+  providers: [StyleManager, ThemeStorage],
   templateUrl: 'theme-picker.component.html',
   styleUrls: ['theme-picker.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThemePicker implements OnInit, OnDestroy {
   private _queryParamSubscription = Subscription.EMPTY;

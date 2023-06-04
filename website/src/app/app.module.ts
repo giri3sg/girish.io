@@ -1,3 +1,4 @@
+/*
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -42,3 +43,4 @@ import { TestComponent } from './test/test.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+*/

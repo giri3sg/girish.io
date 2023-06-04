@@ -8,8 +8,8 @@ describe('GlassMorphismComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GlassMorphismComponent ]
-    })
+    imports: [GlassMorphismComponent]
+})
     .compileComponents();
   });
 
