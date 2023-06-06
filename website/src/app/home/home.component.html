@@ -1,44 +1,10 @@
 <div>
   <div class="id-card">  <p>home works!</p></div>
   <div class="windows-area">
-    <div class="window-card" cdkDrag>
-      <div class="header mat-elevation-z5">
-        <div class="buttons">
-          <i class="b1">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
-          </i>
-          <i class="b2">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove"></mat-icon>
-          </i>
-          <i class="b3">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="switch_left"></mat-icon>
-          </i>
-        </div>
-        <div class="title"></div>
-        <div class="duration"></div>
-      </div>
-      <div class="content mat-elevation-z7">content</div>
+    <div *ngFor="let wh of workhistory">
+
+      <wincard [workHistory]="wh"></wincard>
     </div>
 
-
-    <div class="window-card" cdkDrag>
-      <div class="header mat-elevation-z5">
-        <div class="buttons">
-          <i class="b1">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
-          </i>
-          <i class="b2">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove"></mat-icon>
-          </i>
-          <i class="b3">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="switch_left"></mat-icon>
-          </i>
-        </div>
-        <div class="title"></div>
-        <div class="duration"></div>
-      </div>
-      <div class="content mat-elevation-z7">content</div>
-    </div>
-  </div>
 
 </div>

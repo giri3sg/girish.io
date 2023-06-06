@@ -1,0 +1,72 @@
+$border-radius: 15px;
+$button-size: 24px;
+$icon-size: 48px;
+.window-card {
+  .header {
+    background: rgb(242 242 242 / 50%);
+    //box-shadow: 0px 9px 27px 16px rgba(0, 0, 0, 0.25);
+    border-radius: $border-radius $border-radius 0px 0px;
+    height: 2em;
+    padding: 0.5em 1.5em;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    .buttons {
+      display: flex;
+      gap: 8px;
+
+      &:hover{
+        mat-icon {
+          opacity: 1 !important;
+        }
+      }
+      > i {
+        height: $button-size;
+        width: $button-size;
+        border-radius: $button-size;
+        background: black;
+        display: flex;
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+        align-items: center;
+        justify-content: center;
+        color: #3c3c3c;
+        font-size: 20px;
+        mat-icon {
+          font-size: 20px !important;
+          opacity: 0;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+        }
+      }
+      .b1 { background: #FF8D8D;}
+      .b2 { background: #F6B148;}
+      .b3 { background: #12DD4B;}
+    }
+    .title {
+      display: flex;
+    }
+    .duration {
+
+      font-family: Monaco, "Lucida Console", monospace;
+    }
+  }
+  .content {
+    background: rgba(242, 242, 242, 0.15);
+    //  box-shadow: 0px 9px 27px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px $border-radius $border-radius;
+    min-height: 10em;
+    padding: 0.5em 1em;
+    .position {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      > mat-icon {
+        font-size: $icon-size;
+        height: $icon-size;
+        width: $icon-size;
+      }
+    }
+
+  }
+}

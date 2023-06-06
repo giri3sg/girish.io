@@ -1,0 +1,31 @@
+<div class="window-card" cdkDrag>
+  <div class="header mat-elevation-z5">
+    <div class="buttons">
+      <i class="b1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
+      </i>
+      <i class="b2">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove"></mat-icon>
+      </i>
+      <i class="b3">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="switch_left"></mat-icon>
+      </i>
+    </div>
+    <div class="title">
+      <img [attr.src]="'assets/'+workHistory?.logo" alt="" priority>
+      <!--<img ngSrc="{{details?.logo || 'mylogo'}}" alt="" priority>-->
+    </div>
+    <div class="duration"> {{workHistory?.duration}}</div>
+  </div>
+  <div class="content mat-elevation-z7">
+    <div class="position">
+      <mat-icon *ngIf="!workHistory?.isSvg" fontIcon="{{workHistory?.contentIcon}}"></mat-icon>
+      <mat-icon  *ngIf="workHistory?.isSvg" svgIcon="{{workHistory?.contentIcon}}"></mat-icon>
+      <div>{{workHistory?.position}}</div>
+    </div>
+    <hr/>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of workHistory?.details">{{item}}</mat-list-item>
+    </mat-list>
+  </div>
+</div>
