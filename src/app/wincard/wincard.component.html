@@ -1,11 +1,11 @@
-<div class="window-card" cdkDrag>
-  <div class="header mat-elevation-z5">
+<div class="window-card" cdkDrag     [ngClass]="{'minimized': isMinimized }">
+  <div class="header mat-elevation-z5" cdkDragHandle>
     <div class="buttons">
       <i class="b1">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
       </i>
-      <i class="b2">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove"></mat-icon>
+      <i class="b2" (click)="minimize()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="{{isMinimized? 'crop_free' : 'remove'}}"></mat-icon>
       </i>
       <i class="b3">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="switch_left"></mat-icon>
@@ -27,5 +27,14 @@
     <mat-list role="list">
       <mat-list-item role="listitem" *ngFor="let item of workHistory?.details">{{item}}</mat-list-item>
     </mat-list>
+    <div class="rings">
+      <span class="ring" *ngFor="let ring of workHistory?.skills">
+        <mat-progress-spinner
+                class="example-margin"
+                mode="determinate"
+                value="88">
+        </mat-progress-spinner>
+      </span>
+    </div>
   </div>
 </div>

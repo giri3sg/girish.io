@@ -1,7 +1,15 @@
 $border-radius: 15px;
 $button-size: 24px;
 $icon-size: 48px;
+
+$card-max-height: 500px;
+
 .window-card {
+  &:hover{
+    mat-icon {
+      opacity: 1 !important;
+    }
+  }
   .header {
     background: rgb(242 242 242 / 50%);
     //box-shadow: 0px 9px 27px 16px rgba(0, 0, 0, 0.25);
@@ -11,15 +19,11 @@ $icon-size: 48px;
     cursor: grab;
     display: flex;
     justify-content: space-between;
+
     .buttons {
       display: flex;
       gap: 8px;
-
-      &:hover{
-        mat-icon {
-          opacity: 1 !important;
-        }
-      }
+      cursor: pointer;
       > i {
         height: $button-size;
         width: $button-size;
@@ -47,15 +51,16 @@ $icon-size: 48px;
       display: flex;
     }
     .duration {
-
       font-family: Monaco, "Lucida Console", monospace;
     }
   }
   .content {
+    animation: fadein  1s ease-in-out forwards;
+
     background: rgba(242, 242, 242, 0.15);
     //  box-shadow: 0px 9px 27px 16px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px $border-radius $border-radius;
-    min-height: 10em;
+
     padding: 0.5em 1em;
     .position {
       display: flex;
@@ -67,6 +72,115 @@ $icon-size: 48px;
         width: $icon-size;
       }
     }
-
   }
 }
+
+
+.ring {
+
+}
+.rings{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.minimized {
+  .header { filter: grayscale(0.7);}
+
+  .content {
+    animation: fadeout 1s ease-out forwards;
+  }
+}
+
+/* Animations for card
+*/
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    max-height: 0px;
+  }
+  100% {
+    opacity: 1;
+    max-height: $card-max-height;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    max-height: $card-max-height;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+  }
+}
+
+
+/*
+
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    max-height: $card-max-height;
+  }
+  40% {
+    opacity: 0.5;
+    max-height: $card-max-height / 3;
+  }
+  60% {
+    opacity: 0;
+    max-height: $card-max-height / 6;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+  }
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
